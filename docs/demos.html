@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frustra — demos</title>
+    <link rel="icon" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.170.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.170.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="top">
+        <div>
+          <p class="kicker">SCRIPTED</p>
+          <h1>Six ways the law answers</h1>
+          <p class="sub">Same opening: Aether high, Keel beside him, Vector off in the corner. Watch which moves live.</p>
+        </div>
+        <div class="energy">
+          <span id="verdict-kicker">VERDICT</span>
+          <strong id="verdict">—</strong>
+        </div>
+      </header>
+      <nav class="nav">
+        <a href="./">Pit</a>
+        <a href="demos.html">Demos</a>
+        <a href="https://github.com/AHMADALIPARR/frustration-hamiltonian">AGPL source</a>
+      </nav>
+      <div class="stage">
+        <canvas id="view"></canvas>
+      </div>
+      <section class="panels">
+        <div class="card">
+          <h2>DEMOS</h2>
+          <div class="demo-list" id="list"></div>
+        </div>
+        <div class="card">
+          <h2>TRANSCRIPT</h2>
+          <ul class="ledger" id="ledger"></ul>
+        </div>
+      </section>
+      <footer class="note">
+        These scenes use the same integer predicate as the pit. They are not the Lean proofs and not the C test suite.
+        The terminal twin is <code>make demo</code> inside <code>fh/</code>.
+      </footer>
+    </div>
+    <script type="module" src="demos.js"></script>
+  </body>
+</html>
