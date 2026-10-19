@@ -1,5 +1,9 @@
 # Frustration Hamiltonian
 
+<p align="center">
+  <img src="docs/frustra.jpg" alt="Frustra. Three masses, one bond lit." width="720">
+</p>
+
 Three bodies in a closed box. They want to fall. The law will not let them cheat.
 
 Aether, Keel, and Vector occupy an 8×8×8 lattice. Height is potential. Standing one cell apart is contact, and contact costs. The bill is
