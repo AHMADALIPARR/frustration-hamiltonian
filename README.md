@@ -56,19 +56,74 @@ H_F(s) = y₀ + y₁ + y₂ + C₀₁ + C₀₂ + C₁₂
 
 A commit requires a hard-valid cell, an authorized actor, and a verified unit step of at most one body. With descent on, `H` may not rise. A better soft value never buys a shared cell. Overflow rejects. It does not wrap.
 
-## Certified
+## Opening
 
-Lean 4.21.0, no Mathlib and no `sorry`, proves the commit law, rational normalization, and the emptiness certificates. The C kernel and the Modula-2 rationals are tested on the same examples. GLPK shows one model feasible and one empty.
+Generation 5. No contacts. `H_F = 9/1`.
 
-Not certified: there is no proof the C matches the Lean, and `kernel.s` is `gcc -S`, not CompCert. The ledger is [fh/STATUS.md](fh/STATUS.md).
+| Agent | x | y | z | Share of the bill |
+| --- | ---: | ---: | ---: | ---: |
+| Aether | 0 | 3 | 0 | 3 |
+| Keel | 2 | 2 | 0 | 2 |
+| Vector | 4 | 4 | 1 | 4 |
+| C₀₁ + C₀₂ + C₁₂ | | | | 0 |
+
+## The same four proposals
+
+<p align="center">
+  <img src="media/chart.png" alt="Bar chart. Descent 8 accepted, rise 10 refused, stir 10 accepted, forged token 8 refused." width="840">
+</p>
+
+| Case | What is proposed | H | Commit | Code |
+| --- | --- | --- | --- | --- |
+| Descent | Aether, y − 1 | 9/1 → 8/1 | TRUE | ok |
+| Rise | Aether, y + 1 | 9/1 → 10/1 | FALSE | energy |
+| Stir | the same rise, descent off | 9/1 → 10/1 | TRUE | ok |
+| Forged token | the descent step, token `1` | 9/1 → 8/1 | FALSE | auth |
+| Shared cell | Aether and Keel occupy one site | not the reason | FALSE | hard |
+| Broken rational | `1/0` | — | FALSE | denom |
+
+`make demo` exits 0 only when every row matches.
+
+## Order of refusal
+
+The kernel does not shop for a kinder answer. First failure wins.
+
+| | Gate | Code |
+| --- | --- | --- |
+| 1 | Actor is 0, 1, or 2 | index |
+| 2 | Generation is unchanged | malformed |
+| 3 | Destination is inside the box and unshared | hard |
+| 4 | Token, mask, and the mover is the actor | auth |
+| 5 | At most one body, one axis, one cell | verify |
+| 6 | If descent is on, `H` did not rise | energy |
+| 7 | Generation is not saturated | overflow |
+
+## Standing
+
+Lean 4.21.0. No Mathlib. No `sorry`.
+
+| Claim | Standing |
+| --- | --- |
+| A commit leaves a hard-valid state | Proved in Lean |
+| Descent does not increase `H` | Proved in Lean |
+| An unauthorized move cannot commit | Proved in Lean |
+| Zero denominator is rejected; the gcd cancels | Proved in Lean |
+| Empty interval, pigeonhole, forced overlap | Proved in Lean |
+| C kernel on the same examples, including limb overflow | Tested |
+| Modula-2 rationals and the host call into C | Tested |
+| GLPK `feasible.mod` | Tested. `INTEGER OPTIMAL`, `H = 0` |
+| GLPK `infeasible.mod` | Tested. No primal feasible solution |
+| The C is the Lean | Unverified |
+| `kernel.s` is CompCert | Unverified. It is `gcc -S` |
+| Limb overflow, inside Lean | Unverified. Lean `Int` does not wrap |
+
+The long form is [fh/STATUS.md](fh/STATUS.md).
 
 ```
 cd fh
 make demo
 make test
 ```
-
-`make demo` exits 0 only when descent, the refused rise, stir, overlap, a bad token, and a zero denominator all match.
 
 | Path | |
 | --- | --- |
@@ -77,6 +132,7 @@ make test
 | `fh/m2` | Modula-2 exact rationals, and the call into C |
 | `fh/ampl` | One feasible model, one empty model |
 | `fh/asm` | `gcc -S` listing. Not a semantics proof |
+
 
 ## License
 
