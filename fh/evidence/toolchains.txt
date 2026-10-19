@@ -1,0 +1,5 @@
+gcc 12
+lean Lean (version 4.21.0, x86_64-unknown-linux-gnu, commit 6741444a63ee, Release)
+12
+GLPSOL--GLPK LP/MIP Solver 5.0
+Copyright (C) 2000-2020 Free Software Foundation, Inc.

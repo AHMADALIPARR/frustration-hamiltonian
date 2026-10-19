@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.output/
+.vercel/
+.tanstack/
+fh/build/
+fh/lean/.lake/
+*.o
+*.a
+.env
+.env.*
+*.log

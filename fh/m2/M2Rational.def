@@ -1,0 +1,36 @@
+DEFINITION MODULE M2Rational ;
+
+(* Exact sign-magnitude rationals. Base 10^9, at most 8 limbs.
+   A zero denominator is rejected. Limb growth past 8 limbs is rejected.
+   Neither case wraps. *)
+
+EXPORT QUALIFIED Rational, RatOk, RatDenom, RatOverflow,
+                 RatFromInt, RatAdd, RatSub, RatMul, RatDiv, RatCmp,
+                 RatNumNeg, RatNumLimbs, RatDenLimbs, RatNumLimb, RatDenLimb ;
+
+CONST
+  RatOk = 0 ;
+  RatDenom = 1 ;
+  RatOverflow = 2 ;
+
+TYPE
+  Rational = RECORD
+               nl: ARRAY [0..11] OF INTEGER ;
+               dl: ARRAY [0..11] OF INTEGER ;
+               nn, dn: INTEGER ;
+               nneg: BOOLEAN
+             END ;
+
+PROCEDURE RatFromInt (num, den: INTEGER; VAR o: Rational) : INTEGER ;
+PROCEDURE RatAdd (a, b: Rational; VAR o: Rational) : INTEGER ;
+PROCEDURE RatSub (a, b: Rational; VAR o: Rational) : INTEGER ;
+PROCEDURE RatMul (a, b: Rational; VAR o: Rational) : INTEGER ;
+PROCEDURE RatDiv (a, b: Rational; VAR o: Rational) : INTEGER ;
+PROCEDURE RatCmp (a, b: Rational; VAR c: INTEGER) : INTEGER ;
+PROCEDURE RatNumNeg (a: Rational) : BOOLEAN ;
+PROCEDURE RatNumLimbs (a: Rational) : INTEGER ;
+PROCEDURE RatDenLimbs (a: Rational) : INTEGER ;
+PROCEDURE RatNumLimb (a: Rational; i: INTEGER) : INTEGER ;
+PROCEDURE RatDenLimb (a: Rational; i: INTEGER) : INTEGER ;
+
+END M2Rational.

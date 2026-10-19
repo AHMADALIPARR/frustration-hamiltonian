@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "FRUSTRA",
+      "hasCanvas": false,
+      "bodyTextLen": 358,
+      "bodyTextHash": "d775fd932313560de6f4497e65461dc62cc830231feed1a8140efa92fe1c59a0",
+      "bodyTextPrefix": "SNAPKITTY PIT Frustra H_F 12/1 raising the lattice scout measure",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "FRUSTRA",
+      "hasCanvas": false,
+      "bodyTextLen": 358,
+      "bodyTextHash": "d775fd932313560de6f4497e65461dc62cc830231feed1a8140efa92fe1c59a0",
+      "bodyTextPrefix": "SNAPKITTY PIT Frustra H_F 12/1 raising the lattice scout measure",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

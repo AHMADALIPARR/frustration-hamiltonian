@@ -1,0 +1,11 @@
+DEFINITION MODULE FOR "C" CKernel ;
+
+EXPORT UNQUALIFIED HostCommit, HostLastCode ;
+
+PROCEDURE HostCommit (x0, y0, z0, x1, y1, z1, x2, y2, z2, gen,
+                      px0, py0, pz0, px1, py1, pz1, px2, py2, pz2, pgen,
+                      actor, mask, token, descent : INTEGER) : INTEGER ;
+
+PROCEDURE HostLastCode () : INTEGER ;
+
+END CKernel.

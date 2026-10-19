@@ -1,0 +1,175 @@
+FRUSTRATION HAMILTONIAN — AUTONOMOUS BUILD CONTRACT
+
+Mission
+
+Build a complete, executable, formally verified Frustration Hamiltonian predicate library from mathematical specification through certified assembly.
+
+Do not stop at scaffolding, isolated examples, partial implementations, or documentation.
+
+Implement the complete system in the repository. Execute a continuous build–verify–repair loop until all acceptance criteria pass or an objectively documented external blocker prevents completion.
+
+Required architecture
+
+* AMPL: Declarative Hamiltonian modeling, boundary conditions, hard constraints, and conflict detection.
+* Lean 4.21.0: Zero-Mathlib formal specifications, invariant proofs, and transition preservation.
+* Modula-2: Strict host orchestration, exact M2Rational arithmetic, deterministic evaluation, and fail-closed authorization.
+* ISO C: CompCert-compatible executable predicate kernel.
+* CompCert: Semantics-preserving compilation of the trusted C kernel to target assembly.
+* Assembly: Generated artifacts with reproducible build evidence.
+
+Do not replace the specified languages with Python, JavaScript, TypeScript, or a substitute implementation.
+
+Mathematical contract
+
+Define:
+
+[
+H_F(s)=\sum_i w_iV_i(s)+\sum_{i<j}J_{ij}C_{ij}(s)
+]
+
+Enforce:
+
+[
+\operatorname{Commit}(s,s’)\iff
+\operatorname{HardValid}(s’)\land
+\operatorname{Authorized}(s,s’)\land
+\operatorname{Verified}(s,s’)
+]
+
+For descent-constrained transitions:
+
+[
+H_F(s’)\le H_F(s)
+]
+
+Hard constraints must never be compensated by soft-objective improvements.
+
+All arithmetic decisions must be exact or explicitly rejected.
+
+Continuous engineering loop
+
+Repeat the following cycle:
+
+1. Inspect the repository, installed compilers, solver availability, architecture, and existing implementations.
+2. Identify the highest-priority incomplete proof obligation or executable dependency.
+3. Implement the actual production code.
+4. Compile every affected component.
+5. Execute deterministic unit tests, property tests, boundary tests, and adversarial tests.
+6. Run Lean proof checking with zero sorry and zero additional axioms.
+7. Execute AMPL model validation and solver integration tests.
+8. Compile the C kernel through CompCert.
+9. Verify correspondence between the formal specification, exact arithmetic implementation, and executable predicates.
+10. Inspect failures and repair the underlying implementation.
+11. Rebuild and rerun all affected tests.
+12. Record hashes, compiler versions, test results, proof status, and generated assembly artifacts.
+13. Repeat until every acceptance gate passes.
+
+Do not declare success because a source file exists, a compiler exits successfully, or a theorem was proved independently of the executable implementation.
+
+Mandatory implementation
+
+Implement all of the following:
+
+* Canonical arbitrary-precision rational representation.
+* Exact normalization, addition, subtraction, multiplication, comparison, and division.
+* Deterministic Hamiltonian evaluation.
+* Hard and soft constraint separation.
+* Pairwise frustration evaluation.
+* Constraint satisfiability and conflict reporting.
+* Proof-checkable infeasibility certificates for the supported constraint classes.
+* Canonical AMPL-to-runtime model representation.
+* Lean mathematical definitions and invariant theorems.
+* Machine-checked transition preservation.
+* Exact Modula-2 host decisions.
+* CompCert-compatible C predicate implementation.
+* Safe foreign-function interface between Modula-2 and C.
+* Fail-closed transition rejection.
+* Atomic state commitment.
+* Reproducible assembly generation.
+* Cross-language equivalence testing.
+* Regression tests for every discovered defect.
+
+If M2Rational is absent, implement the required module with exact arithmetic and tests rather than silently substituting floating point.
+
+If a required toolchain is unavailable, investigate installation or reproducible provisioning. Never simulate a successful compilation or proof.
+
+Proof obligations
+
+Prove or mechanically establish:
+
+1. Valid states satisfy every hard constraint.
+2. Accepted transitions preserve all required hard invariants.
+3. Unauthorized transitions cannot commit.
+4. Descent-constrained transitions cannot increase frustration energy.
+5. Rational normalization preserves mathematical value.
+6. Arithmetic overflow cannot silently change a decision.
+7. Identical canonical inputs yield identical outputs.
+8. A verified infeasibility certificate implies no feasible state exists within the modeled domain.
+9. C predicate results correspond to the mathematical specification.
+10. The generated assembly preserves the supported C program semantics under CompCert’s documented assumptions.
+
+Do not claim that CompCert automatically proves Lean-to-C correspondence or verifies the AMPL model.
+
+Mandatory negative testing
+
+Test:
+
+* Contradictory constraints.
+* Zero denominators.
+* Negative denominators.
+* Very large rational numerators and denominators.
+* Arithmetic overflow.
+* Malformed model encodings.
+* Incorrect variable indices.
+* Unauthorized transitions.
+* Increasing Hamiltonian energy.
+* Conflicting pairwise penalties.
+* Invalid proof certificates.
+* Unavailable solver backends.
+* Repeated deterministic execution.
+* State mutation during verification.
+* Compilation and linking failures.
+
+Every rejection must be deterministic and carry an internal failure classification.
+
+The external strict Boolean interface must return FALSE for every rejected transition.
+
+Acceptance criteria
+
+The build is complete only when:
+
+* All required source modules are implemented.
+* AMPL model validation passes.
+* Lean 4.21.0 checks every required theorem.
+* No sorry or unapproved axioms remain.
+* Exact rational arithmetic passes its test suite.
+* The Modula-2 host compiles and executes.
+* The CompCert C kernel compiles to assembly.
+* Cross-language equivalence tests pass.
+* Infeasible models are rejected with valid evidence.
+* Every negative test rejects as specified.
+* Atomic commit tests pass.
+* All required artifacts have reproducible hashes.
+* The final repository can be rebuilt from a clean checkout.
+
+Execution discipline
+
+Use parallel agents only for independent modules. Integrate their work continuously.
+
+Never permit an agent to weaken an invariant, replace exact arithmetic with approximation, or bypass a failed proof to make a build pass.
+
+Do not repeatedly rewrite the architecture or produce planning documents instead of implementation.
+
+When a defect appears:
+
+Reproduce → isolate → repair → prove → compile → test → integrate → repeat.
+
+If blocked by an external dependency, complete every independent task, preserve the failing evidence, and report the exact blocker.
+
+Final delivery
+
+Deliver the actual repository implementation, complete source tree, build instructions, verified theorems, executable tests, generated assembly, toolchain manifest, and certification evidence.
+
+Report which properties are formally proved, which are tested, and which remain unverified.
+
+Do not terminate the engineering loop while an actionable implementation or verification failure remains.
