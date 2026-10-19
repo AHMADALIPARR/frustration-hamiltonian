@@ -11,6 +11,7 @@ Descent additionally requires `H(s') ≤ H(s)`. A better soft value never buys a
 | Path | What |
 | --- | --- |
 | `fh/c` | ISO C kernel: limb rationals, commit classification, host FFI |
+| `fh/c/demo.c` | Scripted commit-law demo (`make demo`) |
 | `fh/include/fh.h` | ABI |
 | `fh/lean` | Lean 4.21.0 proofs, no Mathlib |
 | `fh/m2` | Modula-2 exact rationals and the host call into the C kernel |
@@ -37,3 +38,22 @@ CompCert (`ccomp`) is not part of this tree. The assembly file is unverified `gc
 
 The browser pit is a viewer. It is not the certified kernel.
 Certification detail, including what is still unverified, is in [fh/STATUS.md](fh/STATUS.md).
+
+## Demo
+
+```
+cd fh
+make demo
+```
+
+Prints one descent commit, one refused rise, the same rise with descent off, a hard overlap rejection, a bad token, and a zero denominator. Exit status is 0 only when each of those outcomes matches the kernel.
+
+## License
+
+Copyright (C) 2026 AHMAD ALI PARR
+
+The Frustration Hamiltonian kernel, proofs, models, and pit (`fh/`, `src/game/`, `src/components/playground/`) are licensed under the GNU Affero General Public License v3.0 or any later version. See [LICENSE](LICENSE) and SPDX identifier `AGPL-3.0-or-later`.
+
+`kernel.s` and `fh/asm/fh_kernel.s` are generated `gcc -S` listings. They are not CompCert output.
+
+The app shell under `src/lib/`, `scripts/`, and `server/` is the viewer scaffold and is not part of that grant.

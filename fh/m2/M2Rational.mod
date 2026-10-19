@@ -1,6 +1,8 @@
 IMPLEMENTATION MODULE M2Rational ;
 
-(* Eight-limb exact rationals. Internal scratch holds twelve limbs so a
+(* Copyright (C) 2026 AHMAD ALI PARR
+   SPDX-License-Identifier: AGPL-3.0-or-later
+   Eight-limb exact rationals. Internal scratch holds twelve limbs so a
    one-bit shift of an eight-limb remainder still fits. Results that need a
    ninth limb are rejected. *)
 

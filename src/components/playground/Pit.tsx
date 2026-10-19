@@ -147,6 +147,12 @@ export function Pit() {
         <div>
           <p className="font-mono text-[11px] tracking-[0.22em] text-muted">SNAPKITTY PIT</p>
           <h1 className="text-2xl font-medium tracking-tight">Frustra</h1>
+          <a
+            className="font-mono text-[11px] tracking-[0.14em] text-accent"
+            href="https://github.com/AHMADALIPARR/frustration-hamiltonian"
+          >
+            AGPL-3.0 source
+          </a>
         </div>
         <div className="text-right">
           <p className="font-mono text-[11px] tracking-[0.16em] text-muted">H_F</p>

@@ -2,7 +2,7 @@ CC ?= gcc
 CFLAGS ?= -std=c11 -Wall -Wextra -Werror -O2 -Iinclude
 LDFLAGS ?=
 
-.PHONY: test clean test-compile-fail test-link-fail asm m2 host ampl
+.PHONY: test clean test-compile-fail test-link-fail asm m2 host ampl demo
 
 GM2 ?= /opt/fh-tools/usr/bin/x86_64-linux-gnu-gm2-12
 GM2LIB ?= /opt/fh-tools/usr/lib/gcc/x86_64-linux-gnu/12
@@ -11,6 +11,13 @@ GM2FLAGS ?= -fpim -fno-use-linker-plugin -I $(GM2LIB)/m2/m2pim -I m2 -L $(GM2LIB
 
 test: build/test_fh
 	./build/test_fh
+
+demo: build/demo
+	./build/demo
+
+build/demo: c/fh_kernel.c c/demo.c include/fh.h
+	mkdir -p build
+	$(CC) $(CFLAGS) -o build/demo c/fh_kernel.c c/demo.c $(LDFLAGS)
 
 build/test_fh: c/fh_kernel.c c/test_fh.c include/fh.h
 	mkdir -p build
