@@ -1,7 +1,7 @@
 # Frustration Hamiltonian
 
 <p align="center">
-  <img src="docs/frustra.jpg" alt="Frustra. Three masses, one bond lit." width="720">
+  <img src="frustra.jpg" alt="Frustra. Three masses, one bond lit." width="720">
 </p>
 
 Three bodies in a closed box. They want to fall. The law will not let them cheat.
@@ -23,12 +23,6 @@ A proposed next state commits only when all of this is true:
 
 Overlap is not a bargain. A lower soft value never buys a hard failure. Arithmetic is exact and rational. Overflow rejects. It does not wrap.
 
-**The pit is live:** [ahmadaliparr.github.io/frustration-hamiltonian](https://ahmadaliparr.github.io/frustration-hamiltonian/)
-
-Scout, measure, commit — or take the stick and shove one agent yourself. Masses you drop are theater. The lattice is the law.
-
-**Scripted answers:** [six demos](https://ahmadaliparr.github.io/frustration-hamiltonian/demos.html) — descent, a refused rise, stir, overlap, a forged token, two movers.
-
 ## What is actually certified
 
 Lean 4.21.0, no Mathlib and no `sorry`, proves the commit law, rational normalization, and the emptiness certificates (bound, pigeon, forced overlap). The C kernel and the Modula-2 rationals are tested against the same examples. GLPK agrees the separation model is feasible in one case and empty in the other.
@@ -37,13 +31,10 @@ What is not certified, and will not be pretended:
 
 - There is no machine-checked proof that the C matches the Lean.
 - `kernel.s` is `gcc -S`. CompCert is not in this tree.
-- The browser pit is a viewer of the integer model. It is not `fh_commit`.
 
 The blunt ledger is [fh/STATUS.md](fh/STATUS.md).
 
 ## Run it
-
-The page needs nothing. The kernel does.
 
 ```
 cd fh
@@ -65,7 +56,6 @@ cd lean && lake build
 
 | Path | What it is |
 | --- | --- |
-| `docs/` | The pit and the six demos, served by GitHub Pages |
 | `fh/c` | The C kernel, the host FFI, and `demo.c` |
 | `fh/lean` | The proofs |
 | `fh/m2` | Modula-2 exact rationals and the call into C |
@@ -76,4 +66,4 @@ cd lean && lake build
 
 Copyright (C) 2026 AHMAD ALI PARR
 
-The kernel, the proofs, the models, and the pit are [GNU AGPL v3 or later](LICENSE) (`AGPL-3.0-or-later`). If you serve a modified pit, the people using it get the source. The app shell under `src/lib/`, `scripts/`, and `server/` is viewer scaffolding and is not part of that grant.
+The kernel, the proofs, and the models are [GNU AGPL v3 or later](LICENSE) (`AGPL-3.0-or-later`).
