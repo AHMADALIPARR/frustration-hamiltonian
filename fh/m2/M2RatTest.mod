@@ -1,3 +1,6 @@
+(* Copyright (C) 2026 AHMAD ALI PARR
+   SPDX-License-Identifier: AGPL-3.0-or-later *)
+
 MODULE M2RatTest ;
 
 FROM StrIO IMPORT WriteString, WriteLn ;

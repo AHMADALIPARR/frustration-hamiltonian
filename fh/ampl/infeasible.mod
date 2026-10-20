@@ -1,3 +1,6 @@
+# Copyright (C) 2026 AHMAD ALI PARR
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Same hard separation, but agents 0 and 1 are forced onto one cell.
 param B := 7;
 set A := 0 .. 2;

@@ -1,3 +1,6 @@
+# Copyright (C) 2026 AHMAD ALI PARR
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Hard box + pairwise separation. Soft objective is height potential.
 # Pairwise contact is enforced as an exact indicator and priced at 1.
 param B := 7;

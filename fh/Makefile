@@ -1,3 +1,6 @@
+# Copyright (C) 2026 AHMAD ALI PARR
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 CC ?= gcc
 CFLAGS ?= -std=c11 -Wall -Wextra -Werror -O2 -Iinclude
 LDFLAGS ?=

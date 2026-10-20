@@ -1,3 +1,6 @@
+-- Copyright (C) 2026 AHMAD ALI PARR
+-- SPDX-License-Identifier: AGPL-3.0-or-later
+
 /- Frustration Hamiltonian.
    Zero Mathlib. No sorry. No added axioms.
    This development does not claim CompCert or Lean-to-C correspondence. -/
