@@ -42,7 +42,7 @@ Kernel axioms these proofs depend on, and no others: `propext`, `Quot.sound`, an
 ## Unverified
 
 - Obligation 9. There is no machine-checked correspondence between Lean and the C (or Modula-2) code. The C and Modula-2 suites test the same arithmetic examples; they do not prove translation.
-- Obligation 10. `ccomp` is not installed. `ocaml` is not installed. `apt-get` cannot write `/var/cache/apt`, so CompCert cannot be provisioned here. `fh/asm/fh_kernel.s` and `kernel.s` are `gcc -S` output with an AGPL header comment in front. They are not CompCert assembly and carry no semantics-preservation claim.
+- Obligation 10. `ccomp` is not installed. `ocaml` is not installed. `apt-get` cannot write `/var/cache/apt`, so CompCert cannot be provisioned here. `fh/asm/fh_kernel.s` and `fh/asm/kernel.s` are `gcc -S` output with an AGPL header comment in front. They are not CompCert assembly and carry no semantics-preservation claim.
 - Obligation 6 in Lean. Limb overflow is a C/Modula-2 rejection test. Lean `Int` does not wrap, so there is no Lean theorem about a 16-limb overflow.
 - The browser pit evaluates the default integer model in TypeScript. It is not the certified kernel.
 

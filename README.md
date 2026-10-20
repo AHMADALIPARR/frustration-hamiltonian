@@ -119,7 +119,7 @@ Lean 4.21.0. No Mathlib. No `sorry`.
 | GLPK `feasible.mod` | Tested. `INTEGER OPTIMAL`, `H = 0` |
 | GLPK `infeasible.mod` | Tested. No primal feasible solution |
 | The C is the Lean | Unverified |
-| `kernel.s` is CompCert | Unverified. It is `gcc -S`, under an AGPL header |
+| `fh/asm/kernel.s` is CompCert | Unverified. It is `gcc -S`, under an AGPL header |
 | Limb overflow, inside Lean | Unverified. Lean `Int` does not wrap |
 
 The long form is [fh/STATUS.md](fh/STATUS.md).
